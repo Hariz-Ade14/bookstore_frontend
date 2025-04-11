@@ -1,14 +1,12 @@
 import Layout from "../components/layout";
 import React, { useState } from "react";
 import { IoIosStarOutline, IoIosStar } from "react-icons/io";
-import { Spinner } from "./auth/signup";
 import { IoCloudUploadSharp } from "react-icons/io5";
-// import { BASE_URL } from "../store/useAuthStore";
 import uploadToCloudinary from "../components/cloudinary";
 import CircularProgress from "@mui/material/CircularProgress";
 
 
-const BASE_URL = "http://localhost:4000/books"
+// const BASE_URL = "http://localhost:4000/books"
 const Create = () => {
   const [title, setTitle] = useState("");
   const [caption, setCaption] = useState("");
@@ -16,7 +14,6 @@ const Create = () => {
   
   const [loading, setLoading] = useState(false);
   const [imageFile, setImage] = useState<File | null>(null);
-  // const [fileType,setfileType] = useState("");
   const [rating, setRating] = useState(3);
 
   const [filePreview, setFilePreview] = useState<string | null>(null);
@@ -46,7 +43,7 @@ const Create = () => {
     try {
       if(!title || !caption || !imageFile || !rating) {console.log("empty");
          return};
-      const createBook = await fetch("http://localhost:4000/addbook", {
+      const createBook = await fetch("http:bookstore-h11a.onrender.com/addbook", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
