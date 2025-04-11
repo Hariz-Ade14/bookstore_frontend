@@ -8,7 +8,7 @@ const Home = () => {
   // const [ID,setID] = useState("");
 
   const getBooksFromServer = async () => {
-    const response = await fetch("http://bookstore-h11a.onrender.com/allbooks", {
+    const response = await fetch("https://bookstore-h11a.onrender.com/allbooks", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

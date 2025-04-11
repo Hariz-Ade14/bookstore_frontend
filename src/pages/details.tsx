@@ -10,7 +10,7 @@ const Details = () => {
   });
   const { id } = useParams();
   const getBookDetailsByName = async () => {
-    const response = await fetch(`http://bookstore-h11a.onrender.com/${id}`, {
+    const response = await fetch(`https://bookstore-h11a.onrender.com/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

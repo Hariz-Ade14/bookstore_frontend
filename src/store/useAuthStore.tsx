@@ -2,7 +2,7 @@ import { create } from "zustand";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //bookstore-h11a.onrender.com/api/auth
-export const BASE_URL = "http://bookstore-h11a.onrender.com/api/auth";
+export const BASE_URL = "https://bookstore-h11a.onrender.com/api/auth";
 type props = {
      name?: string,
      email: string,

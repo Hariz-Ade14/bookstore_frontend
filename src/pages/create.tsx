@@ -43,7 +43,7 @@ const Create = () => {
     try {
       if(!title || !caption || !imageFile || !rating) {console.log("empty");
          return};
-      const createBook = await fetch("http:bookstore-h11a.onrender.com/addbook", {
+      const createBook = await fetch("https://bookstore-h11a.onrender.com/addbook", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
