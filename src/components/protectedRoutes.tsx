@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import useAuthStore from "../store/useAuthStore";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+// import useAuthStore from "../store/useAuthStore";
+// import { useNavigate } from "react-router-dom";
 const ProtectedRoutes = ({ children }: { children: React.ReactNode }) => {
 //   const { user, isLoggedIn } = useAuthStore();
 //   const navigate = useNavigate();
