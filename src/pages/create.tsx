@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import uploadToCloudinary from "../components/cloudinary";
@@ -16,6 +16,7 @@ const Create = () => {
   const [loading, setLoading] = useState(false);
   const [imageFile, setImage] = useState<File | null>(null);
   const [rating, setRating] = useState(3);
+  const fileInputRef = useRef(null);
 
   const [filePreview, setFilePreview] = useState<string | null>(null);
 
@@ -37,7 +38,11 @@ const Create = () => {
   const handleSubmit = async (e:React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = null;
+    }
+
     const cloudinaryFileUrl = await uploadToCloudinary({ file: imageFile, fileType: "image" });
     const image = cloudinaryFileUrl;
     const bookDetails = { title, caption, image, rating,description };
@@ -61,6 +66,7 @@ const Create = () => {
         setRating(3);
         setImage(null);
         setFilePreview(null);
+        
       }
     } catch (error) {
       return error;
@@ -144,7 +150,7 @@ const Create = () => {
                 onChange={handleFileChange}
                 className=" text-center w-[200px]"
                 type="file"
-                // value={imageFile}
+                ref={fileInputRef}
               />
             </div>
           </div>
