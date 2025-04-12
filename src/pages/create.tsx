@@ -4,6 +4,7 @@ import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import uploadToCloudinary from "../components/cloudinary";
 import CircularProgress from "@mui/material/CircularProgress";
+import ProtectedRoutes from "../components/protectedRoutes";
 
 
 // const BASE_URL = "http://localhost:4000/books"
@@ -70,6 +71,7 @@ const Create = () => {
     "border border-solid border-gray-300 outline-none rounded-[10px] p-3 w-[100%]";
 
   return (
+    // <ProtectedRoutes>
     <Layout>
       <div className="flex flex-col items-start justify-start gap-10 p-4 border m-5 rounded-[10px] bg-white">
         <div className="text-center w-full">
@@ -155,6 +157,7 @@ const Create = () => {
         </form>
       </div>
     </Layout>
+    // </ProtectedRoutes>
   );
 };
 

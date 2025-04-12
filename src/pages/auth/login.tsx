@@ -4,6 +4,8 @@ import useAuthStore from "../../store/useAuthStore";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Spinner } from "./signup";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const { login } = useAuthStore();
 
@@ -12,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [passwordType, setPasswordType] = useState("password");
   const [showPassword, setShowPassword] = useState(false);
-  const router = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,7 +23,8 @@ const Login = () => {
     console.log(response );
     if (response && response.success) {
       setIsLoading(false);
-      router("/home");
+      toast.success("Login Successful");
+      navigate("/books");
     }
     console.log(response);
   };
@@ -32,6 +35,7 @@ const Login = () => {
   };
   const cummonStyles = "border outline-none rounded-[10px] py-2 px-3";
   return (
+    <>
     <div className="flex flex-col gap-4 items-center h-[100vh] md:w-[40%] w-[90%]  mx-auto justify-center">
       <h1 className="font-bold text-emerald-700 text-[30px]">Login</h1>
       <form onSubmit={handleLogin} className="flex flex-col gap-4 w-full">
@@ -67,6 +71,8 @@ const Login = () => {
         </span>
       </p>
     </div>
+    <ToastContainer/>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import { useNavigate } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
-
+import ProtectedRoutes from "../components/protectedRoutes";
 const Home = () => {
   const [books, getBooks] = useState([]);
   // const [ID,setID] = useState("");
@@ -29,6 +29,7 @@ const Home = () => {
         navigate(`/books/${id}`);
   }
   return (
+    // <ProtectedRoutes>
     <Layout>
       <div className="flex p-4 flex-col gap-5">
         <div className="flex flex-col text-center gap-2">
@@ -71,6 +72,7 @@ const Home = () => {
         </div>
       </div>
     </Layout>
+    // </ProtectedRoutes>
   );
 };
 

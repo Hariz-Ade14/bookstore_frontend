@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../../store/useAuthStore";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import CircularProgress from "@mui/material/CircularProgress";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Spinner() {
   return <CircularProgress color="success" />;
@@ -26,6 +28,7 @@ const Signup = () => {
       }
       const response = await signup({ name, email, password });
       if (response && response.success) {
+        toast.success('Signup successful');
         router("/login");
       }
       console.log(response);
@@ -41,6 +44,7 @@ const Signup = () => {
 
   const cummonStyles = "border outline-none rounded-[10px] py-2 px-3";
   return (
+    <>
     <div className="flex flex-col gap-4 items-center h-[100vh] md:w-[40%] w-[90%]  mx-auto justify-center">
       <h1 className="font-bold text-emerald-700 text-[30px]">Signup</h1>
       <form onSubmit={handleSignup} className="flex flex-col gap-4 w-full">
@@ -86,6 +90,8 @@ const Signup = () => {
         </span>
       </p>
     </div>
+    <ToastContainer/>
+    </>
   );
 };
 
