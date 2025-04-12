@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import { useNavigate } from "react-router-dom";
 import { IoIosStar } from "react-icons/io";
-import ProtectedRoutes from "../components/protectedRoutes";
+// import ProtectedRoutes from "../components/protectedRoutes";
 const Home = () => {
   const [books, getBooks] = useState([]);
   // const [ID,setID] = useState("");
