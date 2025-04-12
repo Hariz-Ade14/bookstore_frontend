@@ -40,7 +40,7 @@ const Create = () => {
     setLoading(true);
 
     if (fileInputRef.current) {
-      fileInputRef.current.value = null;
+      fileInputRef.current = null;
     }
 
     const cloudinaryFileUrl = await uploadToCloudinary({ file: imageFile, fileType: "image" });
