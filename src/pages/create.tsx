@@ -150,6 +150,7 @@ const Create = () => {
                 onChange={handleFileChange}
                 className=" text-center w-[200px]"
                 type="file"
+                value=""
                 ref={fileInputRef}
               />
             </div>
