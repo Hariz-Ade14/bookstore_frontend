@@ -4,7 +4,7 @@ import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 import { IoCloudUploadSharp } from "react-icons/io5";
 import uploadToCloudinary from "../components/cloudinary";
 import CircularProgress from "@mui/material/CircularProgress";
-import ProtectedRoutes from "../components/protectedRoutes";
+// import ProtectedRoutes from "../components/protectedRoutes";
 
 
 // const BASE_URL = "http://localhost:4000/books"
